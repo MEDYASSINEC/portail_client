@@ -79,6 +79,7 @@ function handle_request($method, $action, $DATA_FILE) {
                 break;
             }
         }
+        unset($c);
         if (!$updated) bad_request('Client introuvable', 404);
         write_all($DATA_FILE, $clients);
         echo json_encode($updated);

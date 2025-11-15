@@ -98,7 +98,7 @@
 
   // Échappe les caractères HTML pour éviter l'injection XSS
   function escapeHtml(s) {
-    return String(s).replace(/[&<>"]+/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+    return String(s).replaceAll(/[&<>"]+/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
   }
 
   // Charge la liste des clients depuis l'API et met à jour l'état
