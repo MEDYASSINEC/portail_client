@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portail Client</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Portail Client</div>
+    <nav class="menu">
+      <a href="#" class="active">Accueil</a>
+      <a href="#">Clients</a>
+      <a href="#">Aide</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="actions">
+      <button id="btnAdd" class="btn primary">+ Ajouter un client</button>
+      <input id="search" type="search" placeholder="Rechercher... (nom, email)" />
+    </section>
+
+    <section class="card">
+      <h2>Liste des clients</h2>
+      <div class="table-wrap">
+        <table id="clientsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="modal" class="modal hidden" aria-hidden="true" role="dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle">Nouveau client</h3>
+        <button id="modalClose" class="icon-btn" aria-label="Fermer">✕</button>
+      </div>
+      <form id="clientForm" novalidate>
+        <input type="hidden" id="id" name="id" />
+        <div class="form-row">
+          <label for="name">Nom</label>
+          <input id="name" name="name" type="text" placeholder="Ex: Alice Martin" required />
+          <small class="error" data-for="name"></small>
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="alice@example.com" required />
+          <small class="error" data-for="email"></small>
+        </div>
+        <div class="form-row">
+          <label for="phone">Téléphone</label>
+          <input id="phone" name="phone" type="text" placeholder="0601020304" />
+          <small class="error" data-for="phone"></small>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="btnCancel" class="btn">Annuler</button>
+          <button type="submit" class="btn primary">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">© 2025 Portail Client</footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
