@@ -37,4 +37,4 @@ jobs:
         uses: SonarSource/sonarqube-quality-gate-action@v1
         with:
           sonarServerUrl: ${{ secrets.SONAR_HOST_URL }}
-          sonarToken: ${{ secrets.SONAR_TOKEN }}
+          sonarToken: ${{ secrets.SONAR_TOKEN }} 
